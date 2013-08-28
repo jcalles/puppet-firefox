@@ -1,11 +1,11 @@
 name    'jcalles-firefox'
-version '0.0.3'
+version '0.0.4'
 source 'Varias'
 author 'Javier Calles / Smartmatic'
 license 'GPLv2'
 summary 'Firefox install and profile preferences manage '
 description 'This module allows control of the profiles and global preferences firefox. Testing on firefox 17 CentOS6.4 '
-project_page ''
+project_page 'https://github.com/jcalles/puppet-firefox'
 
 ## Add dependencies, if any:
 # dependency 'username/name', '>= 1.2.0'
