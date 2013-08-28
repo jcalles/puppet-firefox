@@ -2,7 +2,12 @@
 //Don't show browser rights
 pref('browser.rights.3.shown', true);
 // Pagina de Inicio 
+<<<<<<< HEAD
 lockPref("browser.startup.page", 0);
+=======
+lockPref("browser.startup.page", 1);
+//lockPref("browser.startup.homepage", "http://confc01srv01");
+>>>>>>> 0628687adc6a48f7f5e9f112dc3240b3e86006a6
 lockPref("browser.startup.homepage", "http://<%= scope.lookupvar('firefox::homepage')%>");
 // Bloqueo Proxy
 lockPref("network.proxy.type", 0);
@@ -13,7 +18,10 @@ lockPref("browser.download.folderList", 1);
 ////////////////////////////////////////////////////////////
 pref("extensions.update.enabled", true);
 // Disable default browser checking.
+<<<<<<< HEAD
 // Disable default browser checking.
+=======
+>>>>>>> 0628687adc6a48f7f5e9f112dc3240b3e86006a6
 lockPref("app.update.auto", false);
 lockPref("app.update.enabled", false);
 lockPref("app.update.service.enabled", false);
@@ -24,5 +32,8 @@ lockPref("browser.shell.checkDefaultBrowser", false);
 lockPref("startup.homepage_welcome_url", "");
 pref("browser.bookmarks.file","/etc/firefox/profile/bookmarks.html");
 pref("browser.bookmarks.added_static_root", false);
+<<<<<<< HEAD
 pref("browser.tabs.forceHide", false);
 pref("browser.places.updateRecentTagsUri", false);
+=======
+>>>>>>> 0628687adc6a48f7f5e9f112dc3240b3e86006a6
