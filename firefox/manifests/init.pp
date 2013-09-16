@@ -36,7 +36,6 @@
 # Copyright 2013 Your name here, unless otherwise noted.
 #
 class firefox {
-####### Set ipdddress or fqdn #############################
 include firefox::config
 include firefox::install
 Class["firefox::install"] ->
