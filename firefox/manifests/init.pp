@@ -1,39 +1,60 @@
 # == Class: firefox
 #
-# Full description of class firefox here.
-#
-# === Parameters
-#
-# Document parameters here.
-#
-# [*sample_parameter*]
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
-#
-# === Variables
-#
-# Here you should define a list of variables that this module would require.
-#
-# [*sample_variable*]
-#   Explanation of how this variable affects the funtion of this class and if it
-#   has a default. e.g. "The parameter enc_ntp_servers must be set by the
-#   External Node Classifier as a comma separated list of hostnames." (Note,
-#   global variables should not be used in preference to class parameters  as of
-#   Puppet 2.6.)
-#
+#ChangLog
+#--------
+#Include install.pp and more fix 
+
+#firefox
+#-------
+
+#This module allows control of the profiles and global preferences firefox. Testing onFirefox 17 CentOS6.4. Basically controls two files:
+        
+#     CentOS/RedHat: firefox.js file in /usr/lib64/firefox/defaults/preferences/ or /usr/lib/firefox/defaults/pref/ 
+
+#    Debian/Ubuntu: firefox.cfg file in /usr/lib64/firefox/ or  /usr/lib/firefox/
+
+#Depends:
+#-------
+ 
+#-.CentOS/Redhat: EPEL repository or package firefox-17.0.8-1.el6.centos.x86_64.rpm
+#Ubuntu/Debian: sourcelist
+
+#-. One was developed for (CentOS/RedHat)6.4, however it can be exported to other platforms.
+
+#firefox.cfg.erb (firefox/templates/)
+
+#firefox.js  (firefox/files/)
+
+#bookmarks.html file can be generated from any firefox browser and copy files 
+#within the directory
+
+
+#License
+#-------
+#Apache License, Version 2.0
+
+#Contact
+#-------
+#Javier Calles javier.calles@smartmatic.com
+
+#Support
+#-------
+
+# [Projects site](https://groups.google.com/forum/#!forum/puppet-venezuela)
+ 
 # === Examples
-#
-#  class { firefox:
-#    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ]
-#  }
-#
+#---------
+#    node /fqdn/ {
+#    include firefox        
+#    }
+
 # === Authors
 #
-# Author Name <author@domain.com>
+# JAVIER CALLES <javier.calles@smartmatic.com>
 #
 # === Copyright
 #
-# Copyright 2013 Your name here, unless otherwise noted.
+# Copyright 2013 Javier Calles
 #
 class firefox {
 include firefox::config
