@@ -27,10 +27,10 @@ class firefox::config {
       	default: { fail("Unrecognized operating system for Firefox") }
 }
 
-	package {
-	'firefox':
-	ensure => installed,
-}
+#	package {
+#	'firefox':
+#	ensure => installed,
+#}
 	file {
 	'firefox.cfg':
 	path => "${pathfirefox}/firefox.cfg",
@@ -38,7 +38,7 @@ class firefox::config {
 	mode => 644,
 	owner => 'root',
 	group => 'root',
-	require => Package['firefox'],
+	require => Class['firefox::install'],
 }
 
 	file {
@@ -48,7 +48,7 @@ class firefox::config {
 	mode => 644,
 	owner => 'root',
 	group => 'root',
-	require => Package['firefox'],
+	require => File['firefox.cfg'],
 }
 	file {'/etc/firefox/':
 	ensure => 'directory',
@@ -57,7 +57,6 @@ class firefox::config {
 	force => true,
 	mode   => '775',
 	owner  => 'root',
-	require => Package['firefox'],
 }
 	file {'/etc/firefox/profile/':
 	ensure => 'directory',
@@ -66,7 +65,7 @@ class firefox::config {
 	force => true,
 	mode   => '775',
 	owner  => 'root',
-	require => [File['/etc/firefox/'],Package['firefox']],
+	require => [File['/etc/firefox/'],File['firefox.cfg']],
 }
 	file {
 	'bookmarks.html':
@@ -75,6 +74,6 @@ class firefox::config {
 	mode => 775,
 	owner => 'root',
 	group => 'root',
-	require => [File['/etc/firefox/profile/'],Package['firefox']],
+	require => [File['/etc/firefox/profile/']],
 }
 }
