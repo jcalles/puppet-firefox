@@ -1,5 +1,8 @@
 ChangLog
 --------
+2013-12-12
+        Added support for i386 and x86_64
+
 Include install.pp and more fix 
 
 firefox
@@ -14,7 +17,8 @@ This module allows control of the profiles and global preferences firefox. Testi
 Depends:
 -------
  
--.CentOS/Redhat: EPEL repository or package firefox-17.0.8-1.el6.centos.x86_64.rpm
+- CentOS/Redhat: EPEL repository or package firefox (tested with version 17 ESR from EPEL) 
+
 Ubuntu/Debian: sourcelist
 
 -. One was developed for (CentOS/RedHat)6.4, however it can be exported to other platforms.
